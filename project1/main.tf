@@ -10,8 +10,8 @@ terraform {
 # Configure the AWS Provider
 provider "aws" {
   region = "eu-west-3"
-  access_key = "AKIARKE4LNUKCU43JYN3"
-  secret_key = "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"
+  access_key = "AKIAS4QML3XD5CQ7MVGA"
+  secret_key = "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"
 }
 
 
@@ -133,7 +133,7 @@ resource "aws_instance" "web-server-instance" {
   ami           = "ami-06602da18c878f98d"
   instance_type = "t2.micro"
   availability_zone = "eu-west-3a"
-  key_name      = "main-key"
+  key_name      = "dgp1-key"
 
   network_interface {
     network_interface_id = aws_network_interface.web-server-nic.id
@@ -145,7 +145,7 @@ resource "aws_instance" "web-server-instance" {
                 sudo apt update -y
                 sudo apt install apache2 -y
                 sudo systemctl start apache2
-                sudo bash -c 'echo your first server > /var/www/html/index.html'
+                sudo bash -c 'echo Nacho aquí tu backoffice > /var/www/html/index.html'
                 EOF
 
   tags = {

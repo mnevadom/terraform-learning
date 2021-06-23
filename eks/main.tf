@@ -10,8 +10,8 @@ terraform {
 # Configure the AWS Provider
 provider "aws" {
   region = var.regionmnm
-  access_key = "AKIARKE4LNUKCU43JYN3"
-  secret_key = "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"
+  access_key = ""
+  secret_key = ""
 }
 
 data "aws_eks_cluster" "cluster" {

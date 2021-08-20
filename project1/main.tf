@@ -133,7 +133,7 @@ resource "aws_instance" "web-server-instance" {
   ami           = "ami-06602da18c878f98d"
   instance_type = "t2.micro"
   availability_zone = "eu-west-3a"
-  key_name      = "dgp1-key"
+  key_name      = "aws-dgp-kp"
 
   network_interface {
     network_interface_id = aws_network_interface.web-server-nic.id
@@ -149,6 +149,10 @@ resource "aws_instance" "web-server-instance" {
                 EOF
 
   tags = {
-    Name = "ubuntu"
+    Name = "backoffice"
   }
 }
+
+#sudo apt install apache2 -y
+                #sudo systemctl start apache2
+                #sudo bash -c 'echo Nacho aquí tu backoffice > /var/www/html/index.html'
